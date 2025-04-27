@@ -51,3 +51,5 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
+let description= document.querySelector("description")
+description.innerHTML= response.data.condition.description;
