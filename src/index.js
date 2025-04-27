@@ -5,6 +5,20 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
 }
+let descriptionElement = document.querySelector("description");
+console.log(response.data.condtion.description);
+
+
+
+descriptionElement.innerHTML = response.data.condition.description;
+
+
+
+
+
+
+
+
 
 function search(event) {
   event.preventDefault();
@@ -51,5 +65,3 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
-let description= document.querySelector("description")
-description.innerHTML= response.data.condition.description;
