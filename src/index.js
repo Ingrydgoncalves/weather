@@ -6,13 +6,13 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = temperature;
 
 let descriptionElement = document.querySelector("#description");
-let humidityElement= document.querySelector("#humitidy");
+let humidityElement= document.querySelector("#humidity");
 let  windSpeedElement= document.querySelector("#wind-speed");
 
 
 descriptionElement.innerHTML = response.data.condition.description;
 humidityElement.innerHTML= response.data.temperature.humidity;
-windSpeedElement.innerHTML= response.data.wind.speed km/h;}
+windSpeedElement.innerHTML= response.data.wind.speed + "km/h";}
 
 
 
