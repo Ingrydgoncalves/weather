@@ -11,8 +11,8 @@ let  windSpeedElement= document.querySelector("#wind-speed");
 
 
 descriptionElement.innerHTML = response.data.condition.description;
-humidityElement.innerHTML= `${response.data.temperature.humidity}%`;
-windSpeedElement.innerHTML= `${response.data.wind.speed} km/h `;}
+humidityElement.innerHTML= response.data.temperature.humidity;
+windSpeedElement.innerHTML= response.data.wind.speed km/h;}
 
 
 
