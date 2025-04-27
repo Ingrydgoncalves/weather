@@ -5,13 +5,13 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
 }
-let descriptionElement = document.querySelector("description");
-console.log(response.data.condtion.description);
+let descriptionElement = document.querySelector("#description");
+let humidityElement= document.querySelector("#humitidy ")
 
 
 
 descriptionElement.innerHTML = response.data.condition.description;
-
+humidityElement.innerHTML= `${response.data.temperature.humidity};
 
 
 
