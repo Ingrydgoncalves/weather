@@ -11,7 +11,7 @@ let humidityElement= document.querySelector("#humitidy ")
 
 
 descriptionElement.innerHTML = response.data.condition.description;
-humidityElement.innerHTML= `${response.data.temperature.humidity};
+humidityElement.innerHTML= `${response.data.temperature.humidity}%`;
 
 
 
