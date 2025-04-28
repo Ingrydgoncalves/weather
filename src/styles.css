@@ -49,7 +49,7 @@ main {
 .current-temperature {
   font-size: 48px;
   position: relative;
-  left:100px;
+  left:80px;
 }
 
 .current-weather {
