@@ -53,12 +53,12 @@ main {
   justify-content:flex-end;
  
  
-  
 }
 
 .current-weather {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
+  gap: 10px;
 }
 
 .current-city {
@@ -89,9 +89,6 @@ main {
 .current-temperature-value {
   font-size: 80px;
   font-weight: bold;
-  
-  
-  
 }
 
 .current-temperature-unit {
@@ -100,6 +97,9 @@ main {
   top: -38px;
   left:2.5px;
 }
+
+.weather-forecast{ display: flex;
+justify-content: space-between;}
 
 .weather-forecast-date{ 
   text-align: center;
