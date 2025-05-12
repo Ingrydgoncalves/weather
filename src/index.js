@@ -14,11 +14,11 @@ let iconElement= document.querySelector("#icontime");
 descriptionElement.innerHTML = response.data.condition.description;
 humidityElement.innerHTML= response.data.temperature.humidity;
 windSpeedElement.innerHTML= response.data.wind.speed + "km/h";
-iconElement.innerHTML= `<img src="${ response.data.condition.icon_url}"class= current-temperature-icon"/>`; }
+iconElement.innerHTML= `<img src="${ response.data.condition.icon_url}"class= current-temperature-icon"/>`;}
 
 
 
-getForecast(response.data.city);
+
 
 
 
@@ -71,7 +71,7 @@ currentDateELement.innerHTML = formatDate(currentDate);
 
 function displayforecast (response) {
   console.log(response.data);
-  let days= ["Tue","Wed","Thu","Fri","Sat"];
+  let days= response.data.daily;
   let forecastHtml= "";
   days.forEach(function (day, index) {
     if(index < 5) {
@@ -79,8 +79,8 @@ function displayforecast (response) {
     forecastHtml + `
  
  <div class="weather-forecast-day">
-   <div class="weather-forecast-date"> ${formatDay(day.time)} </div>
-   <div class="weather-forecast-icon"> <img src= "${day.condition.icon_url}"/> </div>
+   <div class="weather-forecast-date"> ${formatDay(day.time)}</div>
+    <img src="${day.condition.icon_url}"/> 
    <div class="weather-forecast-temperatures">
      <div class="weather-forecast-temperature">
      <strong> ${Math.round(day.temperature.maximum)}°</strong>
@@ -89,6 +89,7 @@ function displayforecast (response) {
  </div> 
  </div>
  `;
+    }//
   });
   let forecastElement= document.querySelector("#forecast");
    forecastElement.innerHTML= forecastHtml;
@@ -97,7 +98,7 @@ function displayforecast (response) {
 function getForecast (city) {
    let apiKey = "ce024dff2t11ac0410oc03803af4bc0a";
    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-   axios(apiUrl).then(displayforecast);
+   axios.get(apiUrl).then(displayforecast);
 
 }
 
@@ -106,11 +107,6 @@ function formatDay(timestamp){
 let date= new Date ( timestamp * 1000);
 let days = [ "Sun", "Mon", "Tue", "Wed","Thu", "Fri","Sat"];
 return days[date.getDay()];}
-
-
-
-
-
 
 
 getForecast("Paris");
