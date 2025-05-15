@@ -98,7 +98,7 @@ main {
   left:2.5px;
 }
 
-.weather-forecast{ display: flex;
+.weather-forecast{display: flex;
 justify-content: space-between;}
 
 .weather-forecast-date{ 
